@@ -1,0 +1,461 @@
+/* 
+    CSS Style Sheet for Liam Meagher Portfolio Website 
+*/
+
+/* CSS Universal Selector */
+/* Formats ALL HTML elements (before others overwrite it */
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+	scroll-behavior: smooth;
+}
+
+html {
+    /* Set rem font size for rest of page (16px is default) */
+    font-size: 16;
+    text-align: justify;
+}
+
+/* Style the body */
+body {
+    margin: 0;
+    padding: 0;
+
+    font-family: Tahoma, "Trebuchet MS", sans-serif;
+}
+
+main {
+    overflow: auto;
+    align-items: center;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+p {
+    margin: 0;
+    font-size: 1.2rem;;
+}
+
+.header-block {
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: cover;
+
+    color: white;
+    text-align: center;
+    text-shadow: 0.3rem 0.3rem 0.5rem #000000;
+
+    width: auto;
+    z-index: -1;
+
+    /* Set size of header image default (except home page) */
+    height: 60vh;
+    padding: 20vh 0;
+}
+
+/* Increase the font size of the heading */
+.header-block h1 {
+    margin: 0 10vw;
+
+    font-size: 6vw;
+    text-transform: uppercase;
+    letter-spacing: 0.4rem;
+}
+
+.header-block p {
+    font-size: 2vw;
+    padding: 0;
+    letter-spacing: 0.2rem;
+}
+
+/* Header for Home Page */
+.header-block#home-page {
+
+    height: 100vh;
+    padding: 40vh 5vw;
+}
+
+.caron a {
+    color: white;
+    opacity: 0.5;
+    text-decoration: none;
+    font-weight: bold;
+
+    font-size: 3rem;
+
+    position: absolute;
+    left: 50%;
+    top: 55%;
+    transform: translate(-50%, -50%);
+}
+
+/* Make caron solid white when hovered over */
+.caron a:hover {
+    opacity: 1;
+}
+
+/* Position caron at bottom of header image specifically for home page */
+#home-page .caron a{
+    top: 95%;
+}
+
+/* Split main body into three columns, using the middle for content */
+.main-body {
+    display: grid;
+    grid-template-columns: auto 70vw auto;
+}
+
+.main-body h2 {
+    margin: 0;
+    padding: 2rem 0;
+    display: block;
+    text-align: center;
+    text-transform: uppercase;
+
+    font-size: 2rem;
+}
+
+.main-body h3 {
+    margin: 0;
+    padding: 2rem 0;
+    display: block;
+    text-align: center;
+    text-transform: uppercase;
+
+    font-size: 2rem;
+    font-weight: normal;
+}
+
+.content-block {
+    font-size: 1.2rem;
+    padding: 0;
+}
+
+.content-block.button {
+    margin: 0 0 2vw;
+    padding: 0;
+    text-align: center;
+}
+
+.button button {
+    margin: 0;
+    padding: 1rem 2rem;
+    background-color: #222222;
+    border: none;
+    border-radius: 0.3rem;
+    max-width: 80vw;
+
+    color: white;
+    font-size: 1rem;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
+    cursor: pointer;
+}
+
+.button a {
+    color: white;
+}
+
+.button button:hover {
+    background: #222222AA;
+    transition: 0.2s;
+}
+
+.picture-subtitle {
+    margin: 0;
+    padding: 2% 10%;
+    text-align: center;
+}
+
+.picture-subtitle img {
+    width: 100%;
+    object-fit: cover;
+    aspect-ratio: 1;
+}
+
+.id-anchor {
+    /* Anchor buffer: This Value is dependent on the navbar height in navbar.css */
+    scroll-margin-top: 60px;
+}
+
+/*
+    Picture + Text blocks for main sections
+*/
+
+/* Group of pictures and text in block format */
+.pictext-top,
+.pictext-bot {
+    display: grid;
+    grid-template-rows: auto auto;
+    padding-bottom: 2rem;
+}
+
+/* Default size for all images in .pictext-top and .pictext-bot */
+.pictext-top img,
+.pictext-bot img {
+    max-height: calc(35vh - 1rem);
+    max-width: 100%;
+    margin: 1rem auto;
+    border-radius: 0.5rem;
+}
+
+/* Group of pictures and text in inline format */
+.pictext-left,
+.pictext-right {
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: auto auto;
+    padding-bottom: 2rem;
+}
+
+.pictext-left img,
+.pictext-right img {
+    max-height: 50vh;
+    max-width: calc(100% - 2rem);
+    border-radius: 0.5rem;
+}
+
+/* Give images on the left some margin on right */
+.pictext-left img {
+    margin: 0 2rem 0 0;
+}
+
+/* Give images on the right some margin on left */
+.pictext-right img {
+    margin: 0 0 0 2rem;
+}
+
+/* For single images in the pictext groups */
+.pictext-img img {
+    display: block;
+    align-items: center;
+}
+
+/* For 2 images (MAX!) that will stay inline */
+.pictext-img-hard-inline {
+    display: inline-flex;
+    justify-content: center;
+}
+
+.pictext-img-hard-inline img {
+    margin: 1rem 0.5rem;
+    max-width: calc(50% - 1rem);
+}
+
+/* For 2 images (MAX!) that transition from inline to block for mobile */
+.pictext-img-soft-inline {
+    display: inline-flex;
+    justify-content: center;
+}
+
+.pictext-img-soft-inline img {
+    margin: 1rem 0.5rem;
+}
+
+#directory {
+    display: grid;
+    grid-template-rows: auto auto;
+}
+
+#directory img {
+    box-shadow: 0.3rem 0.3rem 0.5rem #000000;
+    border-radius: 0.2rem;
+}
+
+.directory-grid {
+    display: grid;
+    grid-template-rows: 100%;
+    grid-template-columns: 33% 33% 33%;
+}
+
+.img-square {
+    width: 100%;
+    object-fit: cover;
+    aspect-ratio: 1;
+}
+
+.picture-subtitle a:hover {
+    opacity: 0.7;
+    transition: 0.3s;
+}
+
+.picture-subtitle p {
+    margin: 0;
+    padding: 2vh 0;
+
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    font-weight: normal;
+    letter-spacing: 0.1rem;
+}
+
+.picture-subtitle-image {
+    margin: 0 10%;
+    max-width: 80%;
+
+    border-radius: 0.2rem;
+    box-shadow: 0.3rem 0.3rem 0.5rem #000000;
+}
+
+#project-categories p {
+    text-align: center;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    padding: 1rem;
+    letter-spacing: 0.2rem;
+    border-radius: 1rem;
+}
+
+#project-categories p:hover {
+    background: #22222230;
+    transition: 0.3s;
+}
+
+#contact-me iframe {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 800px;
+    border: none;
+}
+
+.pdf-image {
+    width: auto;
+    max-width: 100%;
+    max-height: 100vh;
+    padding: 0;
+    margin: 0;
+}
+
+.resume-image {
+    padding: 0;
+    text-align: center;
+}
+
+.vertical-video {
+    height: 60vh;
+    width: auto;
+    display: flex;
+    margin: 2rem auto;
+    border-radius: 0.5rem;
+}
+
+.youtube {
+    width: 70vw;
+    height: calc(0.5625 * 70vw);
+    margin: 2rem auto;
+    border-radius: 0.5rem;
+    display: flex;
+}
+
+/* Footer */
+.footer {
+    margin: 0;
+    margin-top: 2rem;
+    padding: 1vh;
+    background: #222222;
+
+    color: white;
+    text-align: center;
+}
+
+.footer a {
+    margin: auto;
+    padding: 0 15rem;
+    color: white;
+}
+
+.footer p:hover {
+    opacity: 0.7;
+    border-radius: 5px;
+    transition: 0.5s;
+}
+
+/* MEDIA QUERIES */
+
+/* Change layout for mobile layouts */
+@media (max-width: 600px) {
+
+    /* Change rem font size for mobile */
+    html {
+        font-size: 12px;
+    }
+
+    /* Give body more space in center*/
+    .main-body {
+        grid-template-columns: auto 80vw auto;
+    }
+
+    /* Change directory boxes to grid in rows, not columns */
+    .directory-grid {
+        display: grid;
+        grid-template-rows: auto auto auto;
+        grid-template-columns: 100%;
+    }
+
+    .picture-subtitle p {
+        font-size: 1.5rem;
+    }
+
+    #contact-me iframe {
+        height: 900px;
+        overflow-x: hidden;
+    }
+
+    #contact + .main-body {
+        grid-template-columns: auto 95vw auto;
+    }
+
+    .youtube {
+        width: 80vw;
+        height: calc(0.5625 * 80vw);
+    }
+
+}
+
+/* Change layout of pictext blocks for mobile/tablet transitional sizes */
+@media (max-width: 1000px) {
+
+    /* Change pictext-left and pictext-right to adjust for mobile */
+    /* pictext-left will change to .pixtext-top */
+    /* pictext-right will change to .pixtext-bot */
+    .pictext-left,
+    .pictext-right {
+        grid-template-rows: auto auto;
+        grid-template-columns: auto;
+    }
+    
+    .pictext-left img,
+    .pictext-right img {
+        max-height: calc(35vh - 1rem);
+        max-width: 100%;
+        margin: 1rem auto 1rem auto;
+        display: flex;
+    }
+
+    /* Adjust  2 images (MAX!) so they change to block from inline */
+    .pictext-img-soft-inline {
+        display: block;
+        text-align: center;
+    }
+}
+
+/* Change layout for HD monitors */
+@media (min-width: 2000px) {
+
+    /* Change rem font size for HD */
+    html {
+        font-size: 1vw;
+    }
+
+    /* Anchor buffer: Change to match navbar in HD mode */
+    .first-block {
+        scroll-margin-top: 10vh;
+    }
+
+}

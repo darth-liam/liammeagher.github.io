@@ -1,0 +1,207 @@
+/* 
+    CSS Style Sheet for a responsive Navigation bar
+*/
+
+/* ROOT SELECTOR */
+/* Creates global variables for this CSS Sheet */
+:root {
+    --nav-height: 60px;
+    --bar-height: calc(var(--nav-height) / 10);
+    --bar-width: calc(var(--bar-height) * 5);
+    --hamburger-gap: var(--bar-height);
+    --hamburger-height: calc(var(--bar-height) * 3 + var(--hamburger-gap) * 2);
+    --hamburger-margin: calc((var(--nav-height) - var(--bar-width)) / 2);
+    --x-width: calc(var(--hamburger-height) * 1.41421356237);
+
+    --bg-color: #222222;
+
+    --icon-size: 1.2rem;
+}
+
+/* GENERAL NAV BAR */
+#nav-bar {
+    position: fixed;
+    top: 0;
+    width: 500vw;
+    height: var(--nav-height);
+    box-sizing: border-box;
+    text-align: center;
+    z-index: 3;
+
+    display: grid;
+    grid-template-rows: var(--nav-height) auto;
+    grid-template-columns: var(--nav-height) auto;
+
+    /* background when scroll is in the top */
+    background: linear-gradient(to bottom, #222222FF, #22222230, #22222200);
+}
+
+/* LOGO */
+/* Style the logo in the top left of the navbar */
+nav .logo {
+    margin: auto auto auto 0;
+    padding: 10px;
+    z-index: 4;
+
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: 0.2rem;
+    text-transform: uppercase;
+    text-align: left;
+    text-decoration: none;
+    color: #FFFFFF;
+}
+
+/* Make logo background darker when hovered */
+nav .logo:hover {
+    background: #00000070;
+    border-radius: 5px;
+    transition: 0.5s;
+}
+
+/* HAMBURGER MENU */
+/*Style the hamburger menu*/
+.hamburger-menu {
+    display: flex;
+    flex-direction: column;
+    gap: var(--hamburger-gap);
+
+    width: max-content;
+    margin: calc(var(--hamburger-margin) );
+    z-index: 4;
+    cursor: pointer;
+}
+
+/* Make hamburger menu more transparent when hovered */
+.hamburger-menu:hover {
+    opacity: 0.7;
+    transition: 0.5s;
+}
+
+/* Setup hamburger menu with bars before and after the checkbox */
+.hamburger-menu::before,
+.hamburger-menu::after,
+.hamburger-menu input {
+    content: "";
+    width: var(--bar-width);
+    height: var(--bar-height);
+    background-color: white;
+    border-radius: 9999px;
+
+    /* Animation settings */
+    transform-origin: center;
+    transition: transform 1s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+/* Hide all the properties of the checkbox to make it appear like the bars before and after it */
+.hamburger-menu input {
+    appearance: none;
+    padding: 0;
+    margin: 0;
+    outline: none;
+    pointer-events: none;
+}
+
+/* Style the hamburger menu when it is clicked/checked */
+.hamburger-menu input:checked {
+    opacity: 0;
+    width: 0;;
+    transition: 500ms;
+}
+
+/* Determine the shape of the hamburger menu after it transforms to X */
+.hamburger-menu:has(input:checked)::before {
+    transform: rotate(405deg);
+    width: var(--x-width);
+    translate: calc((var(--x-width) - var(--bar-width)) / -2) calc(var(--bar-height) * 2);
+}
+
+.hamburger-menu:has(input:checked)::after {
+    transform: rotate(-405deg);
+    width: var(--x-width);
+    translate: calc((var(--x-width) - var(--bar-width)) / -2) calc(var(--bar-height) * -2);
+}
+
+/* style sidebar and keep it hidden until clicked */
+.sidebar {
+    position: absolute;
+    float: left;
+    top: 0;
+    background: linear-gradient(to right, #111111FF, #111111FF, #11111100);
+
+    color: white;
+    text-align: left;
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
+
+    margin: 0;
+    padding: 0;
+    padding-top: calc(var(--hamburger-height) + var(--hamburger-margin) + 1rem);
+    min-width: 17rem;
+    min-height: 500vh;
+
+    transition: 1s ease-out;
+    translate: -100%;
+    z-index: 2;
+}
+
+/* format sidebar links */
+.sidebar a {
+    margin: 0 10rem 0 0;
+    padding: 1rem;
+    display: block;
+
+    text-decoration: none;
+    color: white;
+}
+
+/* Make sidebar links transparent when hovering over them */
+.sidebar a:hover {
+    background: #000000FF;
+    border-radius: 5px;
+    transition: 0.5s;
+}
+
+/* Move out sidebar after hamburger is clicked */
+.hamburger-menu:has(input:checked) + .sidebar {
+    translate: 0;
+}
+
+/* PAGE DIM */
+#page-dim {
+    position: fixed;
+    width: 500vw;
+    height: 500vh;
+    z-index: 1;
+    background-color: #111111;
+
+    cursor: pointer;
+
+    /* These values will be changed when sidebar opens */
+    translate: -100%;
+    opacity: 0;
+
+    /* Determine how fast the dimmed background comes in */
+    transition: 0.5s ease;
+}
+
+/* Dim main page when sidebar opens */
+.hamburger-menu:has(input:checked) ~ #page-dim {
+    translate: 0;
+    opacity: 0.7;
+}
+
+/* Change layout for HD monitors */
+@media (min-width: 2000px) {
+
+    /* Change rem font size for HD */
+    html {
+        font-size: 1vw;
+    }
+
+    /* Change navbar height for HD */
+    :root {
+        --nav-height: 10vh;
+    }
+
+}

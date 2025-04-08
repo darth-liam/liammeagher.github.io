@@ -1,0 +1,186 @@
+<!-- 
+    Author: Liam Meagher
+    Last Updated: April 8th, 2024
+    This is the Portfolio website for Liam Meagher.
+
+    About Me Page
+-->
+
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+
+    <!-- Setting the viewport to make your website look good on all devices -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Define the character set used -->
+    <meta charset="UTF-8">
+    <!-- Author of the HTML code -->
+    <meta name="author" content="Liam Meagher">
+
+    <!-- Link to Generic Style Sheet -->
+    <link rel="stylesheet" href="\css\styles.css">
+    <!-- Link to Navbar Style Sheet -->
+    <link rel="stylesheet" href="\css\navbar.css">
+
+    <!-- Import jQuery -->
+    <script src="\js\jquery-3.7.1.min.js"></script>
+    
+    <!-- Title of the Website that shows on tab -->
+    <title>Liam Meagher | About Me</title>
+    <!-- Favicon Icon that shows on tab -->
+    <link rel="icon" type="image/x-icon" href="\images\favicon.ico">
+    <!-- Description that shows up in google search -->
+    <meta name="description" content="Liam Meagher Portfolio Website">
+
+</head>
+<body>
+
+    <nav id="nav-bar">
+         
+        <label class="hamburger-menu">
+            <input id="hamburger-check" type="checkbox"/>
+        </label>
+
+        <aside class="sidebar">
+            <nav>
+                <a href="\html\about-me.html">About Me</a>
+                <a href="\html\projects.html">Projects</a>
+                <a href="\html\resume.html">R&eacutesum&eacute</a>
+                <a href="\html\contact.html">Contact</a>
+            </nav>
+        </aside>
+
+        <!-- Logo in the top left -->
+        <a href="/" class="logo">Liam Meagher</a>
+
+        <!-- Empty div to dim page when sidebar is open --> 
+        <div id="page-dim"></div>
+
+    </nav>
+
+    <main>
+
+        <header id="about-me" class="header-block"
+        style="background-image: url(/images/liam.jpg);"
+        title="About Me Header Image">
+
+            <h1>ABOUT ME</h1>
+
+            <!-- Div for caron symbol to scroll to main body -->
+            <div class="caron">
+                <a href="#short-about-me">&#8681</a>
+            </div>
+
+        </header>
+
+        <!-- Main text section after title header -->
+        <div class="main-body">
+
+            <!-- Blank div for spacing -->
+            <div></div>
+
+            <!-- Middle div is for centered content -->
+            <div class="center-column">
+
+                <div id="short-about-me" class="content-block id-anchor">
+
+                    <h2>About Me</h2>
+
+                    <div class="pictext-left">
+
+                        <div class="pictext-img">
+                            <img src="\images\liam.png"
+                            alt="Liam">
+                        </div>
+                    
+                        <div>
+                            <p>
+                                My name is Liam Meagher. I'm an engineer with an
+                                Undergraduate Degree in Computer Science & Engineering from UCLA
+                                with the goal of pursuing a Master's Degree in
+                                Mechanical Engineering. I have a background in
+                                Combat Robotics and Additive Manufacturing and am always
+                                learning new skills! I achieved the rank of Eagle Scout in Scouts BSA
+                                on May 16th, 2019. I spent my summers from 2017 to 2023 volunteering
+                                at Camp Emerald Bay, a Scout camp on Catalina Island, as a counselor and
+                                instructor. This experience taught me self-discipline and leadership skills,
+                                and I returned to the camp as the director of my previous program once I turned 18.
+                                I am a member of the American Society of Mechanical Engineers (ASME) and
+                                I have a passion for teaching and mentoring youth in STEM
+                                and attention to detail.                        
+                            </p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <hr>
+
+                <div id="my-story" class="content-block">
+
+                    <h2>My story</h2>
+
+                    <div class="pictext-right">
+                    
+                        <div>
+                            <p>
+                                Here's my story:
+                                <br><br>
+                                pluh
+                                <br><br>
+                                silly goose                     
+                            </p>
+                        </div>
+
+                        <div class="pictext-img">
+                            <img src="\images\liam.png"
+                            alt="Liam">
+                        </div>
+
+                    </div>
+
+                    <hr>
+
+                    <div class="pictext-left">
+
+                        <div class="pictext-img">
+                            <img src="\images\liam.png"
+                            alt="Liam">
+                        </div>
+
+                    
+                        <div>
+                            <p>
+                                slay
+                                <br><br>
+                                queen
+                                <br><br>
+                                boots
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+            
+            <!-- Blank div for spacing -->
+            <div></div>
+
+        </div>
+
+    </main>
+
+    <div class="footer">
+        <a href="https://github.com/darth-liam/liammeagher.github.io" target="_blank">
+            <p>This website is hosted on GitHub Pages</p>
+        </a>
+    </div>
+
+    <!-- Link to Javascript Sheets -->
+    <script src="\js\script.js"></script>
+    <script src="\js\navbar.js"></script>
+
+</body>
+</html>
